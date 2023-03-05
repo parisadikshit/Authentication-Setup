@@ -17,7 +17,18 @@ Step 3: Configure Okta authentication in React App
           clientId: process.env.REACT_APP_OKTA_CLIENT_ID,
           redirectUri: window.location.origin + '/login/callback',
           scopes: ['openid', 'profile', 'email'],
-          responseType:'token',
+          responseType:'code',
           pkce: true
 
         })
+        
+Step 4: Create the routes necessary for your applications and wrap those in okta's Security Component and also add the login callback route in your routes 
+
+        <Security oktaAuth={oktaAuth} restoreOriginalUri={restoreOriginalUri}>
+        <Routes>
+            <Route path='/' element={<Login/>} />
+            <Route path='/login/callback' element={<LoginCallback/>}/>
+            <Route path='/home' element={<Home/>}/>
+         </Routes>
+        </Security>
+
