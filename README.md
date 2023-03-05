@@ -1,6 +1,8 @@
 # Authentication-Setup
 
-Step 1: npx create-react-app <your-app-name>
+Step 1: Create react application
+
+        npx create-react-app <your-app-name>
         
 Step 2: Installing necessary okta packages with npm 
         
