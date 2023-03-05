@@ -33,5 +33,6 @@ Step 4: Create the routes necessary for your applications and wrap those in okta
         </Security>
         
 Step 5: Add the login component and handle the SignInRedirect whenever the user is not authenticated in authState
+
 Step 6: Add protected routes so that unauthenticated user can not access the routes directly
 
