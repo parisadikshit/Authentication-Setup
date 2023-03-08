@@ -5,6 +5,7 @@ import Login from './login/login';
 import { Home } from './home';
 import { toRelativeUrl, OktaAuth } from '@okta/okta-auth-js';
 import React,{ useEffect } from 'react';
+import Protected from './protected/protected';
 const oktaAuth = new OktaAuth({
   issuer: `${process.env.REACT_APP_AUTHORIZATION_SERVER_URI}`,
   clientId: process.env.REACT_APP_OKTA_CLIENT_ID,
@@ -36,7 +37,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Login/>} />
             <Route path='/login/callback' element={<LoginCallback/>}/>
-            <Route path='/home' element={<Home/>}/>
+            <Route path='/home' element={<Protected element={<Home/>}/>}/>
           </Routes>
           </Security>
 
