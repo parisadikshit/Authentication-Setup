@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useOktaAuth } from "@okta/okta-react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Menu } from "antd";
 import {
     AppstoreOutlined,
@@ -46,6 +47,7 @@ export const Home = () =>{
          
         
       </Menu>
+      <h1 className=" jumbotron text-center bg-primary sqaure"> User Info</h1>
       <pre>{JSON.stringify(user, null, 5)}</pre>
         </>
     )
