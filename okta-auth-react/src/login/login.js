@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 import { useNavigate } from 'react-router-dom';
+import { Menu } from "antd";
+import {
+   AppstoreOutlined,
+   LoginOutlined,
+ } from "@ant-design/icons";
+ const { Item } = Menu;
+
 
 const Login = () => {
    const { oktaAuth, authState } = useOktaAuth();
@@ -20,7 +27,31 @@ const Login = () => {
    }
 
    return (
-      <button onClick={login}>Login</button>
+      <>
+      <Menu mode="horizontal" >
+        <Item
+          key="/"
+          icon={<AppstoreOutlined />}
+        >
+          <a href="/">App</a>
+        </Item>
+      
+         
+            <Item
+              key="/login"
+            onClick={login}
+              icon={<LoginOutlined />}
+            >
+            Login
+            </Item>
+   
+         
+        
+      </Menu>
+    </>
+  
+
+
    )
 }
 
