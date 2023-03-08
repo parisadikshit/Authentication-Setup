@@ -37,7 +37,7 @@ function App() {
             <Route path='/' element={<Login/>} />
             <Route path='/login/callback' element={<LoginCallback/>}/>
             <Route path='/home' element={<Home/>}/>
-            </Routes>
+          </Routes>
           </Security>
 
          </Router>
